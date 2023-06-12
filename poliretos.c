@@ -1,23 +1,26 @@
 /*serie caarateres*/
 #include <stdio.h>
 //serie caracteres//
-void caracterAlternado()
+
+void caracterAlternado(int n)
 {
-    int n=0;
-    do
-    {
-        printf ("Elija un numero: ");
-        scanf ("%i",n);
-
-    } while (n>0)
-
-    for (int n>0; n++)
-    {
-        if (n%2==0); 
-        printf ("+");
-        else
-        printf ("-");
-    }
-
+    for (int i=0; i<n; i++)
+        {
+            if (i%2==0) 
+            printf (" + ");
+            else
+            printf (" - ");
+        }
 
 }
+
+int main()
+{
+    int numero=0;
+        printf ("Elija un numero: ");
+        scanf ("%i",&numero);
+
+    caracterAlternado(numero);
+}
+
+
