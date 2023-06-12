@@ -2,7 +2,7 @@
 #include <stdio.h>
 //serie caracteres//
 
-void caracterAlternado(int n)
+void caracterAlternado(int n)// + - + - ...//
 {
     for (int i=0; i<n; i++)
         {
@@ -11,7 +11,27 @@ void caracterAlternado(int n)
             else
             printf (" - ");
         }
+        printf (" \n ");
+}
+//serie caracteres s2//
+/*void caracterAlternadoFibonacci(int n)  //buscar//
+{
+    for (int i=0; i<n; i++)
+        {
+            if (i%2==0) 
+            printf (" + ");
+            else
+            printf (" - ");
+        }
+}*/
 
+//serie caracteres s4 + - */+ - * / ... //
+void serieCaracterFiguraMasMenos(int num)
+{
+    for (int i=0; i<num; i++)
+    {
+        printf (" + - * / ");
+    } 
 }
 
 int main()
@@ -21,6 +41,7 @@ int main()
         scanf ("%i",&numero);
 
     caracterAlternado(numero);
+   serieCaracterFiguraMasMenos(numero);
 }
 
 
