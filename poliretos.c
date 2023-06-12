@@ -32,6 +32,16 @@ void serieCaracterFiguraMasMenos(int num)
     {
         printf (" + - * / ");
     } 
+    printf ("\n");
+}
+
+//serie caracteres s5 \ l / - l...//
+void serieCaracterFigura2(int num)
+{
+    for (int i=0; i<num; i++)
+    {
+        printf (" \\ l / - l ");
+    } 
 }
 
 int main()
@@ -42,6 +52,7 @@ int main()
 
     caracterAlternado(numero);
    serieCaracterFiguraMasMenos(numero);
+   serieCaracterFigura2(numero);
 }
 
 
