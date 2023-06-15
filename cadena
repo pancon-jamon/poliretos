@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() 
+{
+    char frase[100];
+    int contador = 0;
+
+    printf("Ingresa una frase: ");
+    fgets(frase, sizeof(frase), stdin);
+
+    for (int i = 0; frase[i] != '\0'; i++) {
+        char caracter = tolower(frase[i]);
+
+        if (caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o' || caracter == 'u') 
+        {
+            contador++;
+        }
+    }
+
+    printf("El número de vocales en la frase es: %d\n", contador);
+
+    return 0;
+}
+
+
+//contador consonantes
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char frase[100];
+    int contador = 0;
+
+    printf("Ingresa una frase: ");
+    fgets(frase, sizeof(frase), stdin);
+
+    for (int i = 0; frase[i] != '\0'; i++) {
+        char caracter = tolower(frase[i]);
+
+        if (caracter >= 'a' && caracter <= 'z') {
+            if (caracter != 'a' && caracter != 'e' && caracter != 'i' && caracter != 'o' && caracter != 'u') {
+                contador++;
+            }
+        }
+    }
+
+    printf("El número de consonantes en la frase es: %d\n", contador);
+
+    return 0;
+}
+
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+bool esVocal(char c) {
+    c = tolower(c);
+    return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+}
+
+void eliminarVocal(char *frase, char vocal) {
+    int longitud = strlen(frase);
+
+    for (int i = 0; i < longitud; i++) {
+        if (frase[i] == vocal) {
+            for (int j = i; j < longitud; j++) {
+                frase[j] = frase[j + 1];
+            }
+            longitud--;
+            i--;
+        }
+    }
+}
+
+int main() {
+    char frase[100];
+    char vocal;
+
+    printf("Ingresa una frase: ");
+    fgets(frase, sizeof(frase), stdin);
+
+    printf("Ingresa la vocal que deseas eliminar: ");
+    scanf("%c", &vocal);
+
+    eliminarVocal(frase, vocal);
+
+    printf("La frase resultante es: %s\n", frase);
+
+    return 0;
+}
+
